@@ -65,3 +65,55 @@ nav{
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
 }
+
+.mobile-nav{
+  display: none;
+}
+
+@media screen and (max-width: 700px ) {
+.mobile-nav{
+    display: flex;
+  }
+
+.desktop-nav{
+    display: none;
+  }
+
+.mobile-menu-btn{
+    border: none;
+    background: none;
+  }
+
+.mobile-nav-links a{
+    display: block;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: white;
+  }
+
+.mobile-nav-links{
+  background-color: #E23E57;
+  padding: 20px;
+  height: 100vh;
+  width: 90%;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  position: absolute;
+  }
+  
+  .mobile-links-inner{
+    display: flex;
+    
+  }
+
+  .close-btn{
+   position: absolute;
+   top: 10;
+   right: 0;
+   padding: 20px;
+  }
+}
