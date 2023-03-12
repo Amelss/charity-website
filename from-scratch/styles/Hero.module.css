@@ -6,6 +6,28 @@
     display: none;
 }
 
+.desktopImg{
+    position: relative;
+    text-align: center;
+    color: white;
+    
+}
+
+.imageHeading{
+    font-size: 60px;
+}
+
+.imageSubHeading{
+    font-size: 20px;
+}
+
+.imageText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 @media screen and (max-width: 700px){
 .desktopImg{
@@ -18,16 +40,30 @@
 
 .mobileImg{
     display: block;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.imageHeading{
+    font-size: 30px;
+}
+
+.imageSubHeading{
+    font-size: 15px;
 }
 
 }
 
 
 
-@media screen and (min-width: 1900px ) {
+@media screen and (min-width: 1700px ) {
 
 .extraLargeDtkp{
     display: block;
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
 .desktopImg{

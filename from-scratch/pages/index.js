@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { createClient } from 'contentful';
 import HeroImage from '@/components/HeroImage';
+import Blurb from '@/components/Blurb';
+
 
 
 export async function getStaticProps() {
@@ -10,21 +12,27 @@ export async function getStaticProps() {
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
-
   const res = await client.getEntries({
     content_type: "heroImage",
   });
 
+   const blurb = await client.getEntries({
+     content_type: "introBlurb",
+   });
+
   return {
     props: {
-      heroImage: res.items
-    }
+      heroImage: res.items,
+      introBlurb: blurb.items
+    },
+    revalidate: 10,
   }
 }
 
-export default function Home({heroImage}) {
-console.log(heroImage);
-     
+
+
+
+export default function Home({ heroImage, introBlurb }) {
   return (
     <>
       <Head>
@@ -36,10 +44,9 @@ console.log(heroImage);
       {heroImage.map(heroPicture => (
         <HeroImage key={heroPicture.sys.id} heroPicture={heroPicture} />
       ))}
-      
-      <h1>Homepage</h1>
-
-    
+      {introBlurb.map(intro => (
+        <Blurb key={intro.sys.id } intro={intro} />
+      ))}
     </>
   );
 }

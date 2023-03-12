@@ -1,0 +1,15 @@
+.blurbHeading{
+color: #E23E57;
+text-align: center;
+padding: 40px 10px;
+font-size: 40px;
+width: 800px;
+margin: auto;
+}
+
+.blurbText{
+margin: auto;
+text-align: center;
+padding: 10px 60px;
+font-size: 20px;
+}
