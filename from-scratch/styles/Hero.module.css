@@ -1,0 +1,41 @@
+.mobileImg{
+  display: none;
+}
+
+.extraLargeDtkp{
+    display: none;
+}
+
+
+@media screen and (max-width: 700px){
+.desktopImg{
+    display: none;
+}
+
+.extraLargeDtkp{
+    display: none;
+}
+
+.mobileImg{
+    display: block;
+}
+
+}
+
+
+
+@media screen and (min-width: 1900px ) {
+
+.extraLargeDtkp{
+    display: block;
+}
+
+.desktopImg{
+    display: none;
+}
+
+.mobileImg{
+  display: none;
+}
+
+}
