@@ -22,7 +22,7 @@ export default function HeroImage({ heroPicture }) {
         <div className={styles.extraLargeDtkp}>
           <Image
             src={`https:${file.url}`}
-            width={1920}
+            width={1905}
             height={600}
             alt={heroPicture.fields.altTag}
                 />

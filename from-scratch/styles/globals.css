@@ -16,17 +16,7 @@ body{
 
 }
 
-footer {
-  background: #E23E57;
-  color: #bbb;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-top: 10px;
-  height: auto;
-  margin-top: 50px;
 
-}
 
 nav{
   display: flex;
@@ -72,6 +62,42 @@ nav{
   display: none;
 }
 
+footer {
+  background: #E23E57;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 10px;
+  height: auto;
+  margin-top: 50px;
+  padding-bottom: 10px;
+
+}
+
+.footer-links{
+  display: flex;
+  margin-left: 20px;
+}
+
+.quick-links a{
+  display: block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: white;
+  
+}
+
+.address{
+  margin-left: 100px;
+  width: 160px;
+  line-height: 25px;
+}
+
+.company-info{
+  margin-left: 20px;
+  font-size: 12px;
+}
 @media screen and (max-width: 700px ) {
 .mobile-nav{
     display: flex;
@@ -117,5 +143,17 @@ nav{
    top: 10;
    right: 0;
    padding: 20px;
+  }
+
+  .footer-links{
+    display: block;
+  }
+
+  .address{
+    margin-left: 0;
+  }
+
+  .company-info{
+    font-size: 12px;
   }
 }
