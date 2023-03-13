@@ -22,7 +22,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 25px;
+  padding: 20px 10px;
 }
 
 .logo-nav-links{
@@ -98,6 +98,11 @@ footer {
   margin-left: 20px;
   font-size: 12px;
 }
+
+.services a{
+  text-decoration: none;
+  color: #E23E57;
+}
 @media screen and (max-width: 700px ) {
 .mobile-nav{
     display: flex;
@@ -155,5 +160,7 @@ footer {
 
   .company-info{
     font-size: 12px;
+    padding-right: 10px;
   }
+
 }

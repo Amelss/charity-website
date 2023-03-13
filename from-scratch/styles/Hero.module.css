@@ -29,7 +29,7 @@
 }
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 1110px){
 .desktopImg{
     display: none;
 }
@@ -43,6 +43,8 @@
     position: relative;
     text-align: center;
     color: white;
+    overflow: hidden;
+   
 }
 
 .imageHeading{
@@ -64,6 +66,7 @@
     position: relative;
     text-align: center;
     color: white;
+    overflow: hidden;
 }
 
 .desktopImg{

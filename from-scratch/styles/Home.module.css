@@ -1,0 +1,51 @@
+.services{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.services a{
+  text-decoration: none;
+  color: #E23E57;
+}
+
+.desktopTileImg{
+    padding: 10px;
+}
+
+.mobileTileImg{
+    display: none;
+}
+
+.titleText{
+   margin-left: 10px;
+   margin-top: 5px;
+}
+
+@media screen and (max-width: 700px ) {
+
+.desktopTileImg{
+    display: none;
+}  
+.mobileTileImg{
+    display: block;
+    text-align: center;
+}
+
+.services a{
+    text-align: center;
+    font-size: 15px;
+  
+}
+
+.services{
+    margin-top: 20px;
+    display: block;
+}
+
+.titleText{
+   margin-top: 3px;
+   margin-left: 0;
+}
+
+}
