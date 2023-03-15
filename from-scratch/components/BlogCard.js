@@ -1,33 +1,34 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import styles from '../styles/BlogCard.module.css'
 
 export default function BlogCard({ blog }) {
   const { thumbnail, thumbnailAltTag, title, excerpt, slug } = blog.fields;
   return (
-      <div>
+      <div className={styles.blogs}>
         <Link href={`/blogs/${slug}`}>
-          <div className="blogCard">
+          <div className={styles.blogCard}>
              
               
               
-        <div className="thumbnailImg">
+        <div className={styles.thumbnailImg}>
           <Image
             src={`https:${thumbnail.fields.file.url}`}
-            width={300}
-            height={400}
+            width={600}
+            height={700}
             alt={thumbnailAltTag}
           />
         </div>
-        <div className="blogInfo">
-          <div className="blogTitle">
-            <h4>{title}</h4>
-                      </div>
+       
+          <div >
+            <h4 className={styles.blogTitle}>{title}</h4>
+        </div>
                       
-          <div className="blogExcerpt">
+          <div className={styles.blogExcerpt}>
             <p>{excerpt}</p>
           </div>
-        </div>
+       
               </div>
         </Link>
     </div>

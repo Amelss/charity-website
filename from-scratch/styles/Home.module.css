@@ -22,6 +22,49 @@
    margin-top: 5px;
 }
 
+.homePageBlogs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-gap: 10px 60px;
+    padding: 20px;
+    
+
+}
+.homePageBlogs a{
+    text-decoration: none;
+}
+.homePageBlogCard{
+
+margin: 0;
+padding: 0;
+
+
+}
+
+.blogTitle {
+   color: #E23E57;
+}
+
+.blogExcerpt{
+    color: black;
+}
+
+.thumbnailImg{
+
+
+}
+
+.homePageEvents{
+display: flex;
+justify-content: space-evenly;
+}
+
+.eventsCard{
+
+}
+
+
 @media screen and (max-width: 700px ) {
 
 .desktopTileImg{
@@ -46,6 +89,10 @@
 .titleText{
    margin-top: 3px;
    margin-left: 0;
+}
+
+.homePageBlogs{
+    display: block;
 }
 
 }

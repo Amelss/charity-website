@@ -2,6 +2,7 @@ import React from 'react'
 import { createClient } from "contentful";
 import Head from "next/head";
 import BlogCard from '@/components/BlogCard';
+import styles from '../../styles/BlogCard.module.css'
 
 
 export async function getStaticProps() {
@@ -31,10 +32,12 @@ export default function blogsHome({ blogs }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      
-      {blogs.map(blog => (
+      <div className={styles.blogs}>
+        {blogs.map(blog => (
         <BlogCard key={blog.sys.id} blog={blog} />
       ))}
+      </div>
+      
 
     </div>
   )
