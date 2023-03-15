@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.16.2",
@@ -14,5 +15,11 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
   }
 }

@@ -48,7 +48,7 @@ export async function getStaticProps() {
 
 export default function Home({ heroImage, introBlurb, aboutUs, sessions, joinTheTeam }) {
   return (
-    <>
+    <div>
       <Head>
         <title>From Scratch | Home</title>
         <meta name="description" content="A charity for children using art to express themselves" />
@@ -108,6 +108,6 @@ export default function Home({ heroImage, introBlurb, aboutUs, sessions, joinThe
         ))}
       </div>
 
-    </>
+    </div>
   );
 }
