@@ -50,6 +50,12 @@ export async function getStaticProps() {
     thumbnailAltTag: item.fields.thumbnailAltTag
   }))
 
+  const blogSlider = blogs.items.map((blogItem) => ({
+    title: blogItem.fields.title,
+    thumbnail: blogItem.fields.thumbnail.fields,
+    thumbnailAltTag: blogItem.fields.thumbnailAltTag
+  }));
+
   return {
     props: {
       heroImage: res.items,
@@ -60,6 +66,7 @@ export async function getStaticProps() {
       blog: blogs.items,
       events: event.items,
       slide,
+      blogSlider
     },
     revalidate: 10,
   };
@@ -73,7 +80,8 @@ export default function Home({
   joinTheTeam,
   blog,
   events,
-  slide
+  slide,
+  blogSlider
 }) {
 
   return (
@@ -232,6 +240,22 @@ export default function Home({
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="swiperSlide">
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+          {blogSlider.map((blogItem) => (
+            <SwiperSlide key={blogItem.title}>
+              <Image
+                src={`https:${blogItem.thumbnail.file.url}`}
+                width={400}
+                height={400}
+                alt={blogItem.thumbnailAltTag}
+              />
+              <h2>{blogItem.title}</h2>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div className="slider"></div>
