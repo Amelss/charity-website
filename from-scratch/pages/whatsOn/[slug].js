@@ -17,6 +17,7 @@ import Link from 'next/link';
    });
 
    const paths = res.items.map((item) => {
+ 
      return {
        params: { slug: item.fields.slug },
      };
@@ -40,6 +41,7 @@ import Link from 'next/link';
  }
 
 export default function events({ events }) {
+
   const {title, featuredImage, featuredImageAltTag, eventDate, ticketLink, eventText} = events.fields
   return (
     <div>

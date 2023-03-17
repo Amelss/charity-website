@@ -2,25 +2,27 @@ import React from 'react'
 import Head from 'next/head'
 import { createClient } from "contentful";
 import EventCard from '@/components/EventCard';
+import Slider from '@/components/Slider';
 
-export async function getStaticProps() {
-  const client = createClient({
+
+ const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
+export async function getStaticProps() {
+ 
   const res = await client.getEntries({
     content_type: "events",
   });
 
   return {
-    props: { events: res.items },
+    props: { events: res.items},
     revalidate: 10,
   };
 }
 
 export default function eventsHome({ events }) {
-  console.log(events);
   return (
     <div>
       
@@ -37,8 +39,14 @@ export default function eventsHome({ events }) {
 
       <div className='eventCard'>
         {events.map(event => (
-          <EventCard key={event.sys.id } event={event} />
+          <EventCard key={event.sys.id} event={event} />
     ))}
+      </div>
+    
+      <div className='slider'>
+        {events.map(slide => (
+          <Slider key={slide.sys.id} slide={slide} />
+          ))}
       </div>
       
     </div>

@@ -103,6 +103,9 @@ footer {
   text-decoration: none;
   color: #E23E57;
 }
+
+
+
 @media screen and (max-width: 700px ) {
 .mobile-nav{
     display: flex;

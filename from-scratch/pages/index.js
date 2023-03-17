@@ -5,6 +5,8 @@ import { createClient } from "contentful";
 import HeroImage from "@/components/HeroImage";
 import Blurb from "@/components/Blurb";
 import Link from "next/link";
+import Slider from "@/components/Slider";
+import EventCard from "@/components/EventCard";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -156,57 +158,60 @@ export default function Home({
         ))}
       </div>
 
-          <h1>Upcoming Events</h1>
+      <h1 className={styles.upcomingTitles}>Upcoming Events</h1>
       <div className={styles.homePageEvents}>
-        {events.slice(0,4).map(eventpost => (
+        {events.slice(0, 4).map((eventpost) => (
           <div key={eventpost.sys.id} eventpost={eventpost}>
             <div className={styles.eventsCard}>
               <Link href={`/whatsOn/${eventpost.fields.slug}`}>
                 <div className="eventThumbNail">
-                  <Image src={`https:${eventpost.fields.thumbnail.fields.file.url}`} width={ 300} height={300 } alt={ eventpost.fields.thumbnailAltTag} />
+                  <Image
+                    src={`https:${eventpost.fields.thumbnail.fields.file.url}`}
+                    width={300}
+                    height={300}
+                    alt={eventpost.fields.thumbnailAltTag}
+                  />
                 </div>
-                <div className="eventTitle">
-                  {eventpost.fields.title}
-                </div>
+                <div className={styles.eventTitle}>{eventpost.fields.title}</div>
               </Link>
-              </div>
             </div>
-          ))}
+          </div>
+        ))}
       </div>
 
-      <h1>Latest Blogs</h1>
-<div className={styles.homePageBlogs}>
-      {blog.slice(0,3).map((posts) => (
-        <div key={posts.sys.id} posts={posts} >
-          <div className={styles.homePageBlogCard} >
-          <Link href={`/blogs/${posts.fields.slug}`}>
-            
-              <div className={styles.thumbnailImg}>
+      <h1 className={styles.hpTitles}>Latest Blogs</h1>
+      <div className={styles.homePageBlogs}>
+        {blog.slice(0, 3).map((posts) => (
+          <div key={posts.sys.id} posts={posts}>
+            <div className={styles.homePageBlogCard}>
+              <Link href={`/blogs/${posts.fields.slug}`}>
                 <Image
                   src={`https:${posts.fields.thumbnail.fields.file.url}`}
                   width={400}
                   height={600}
                   alt={posts.fields.thumbnailAltTag}
                 />
-              </div>
-              <div className="blogInfo">
+
                 <div className={styles.blogTitle}>
                   <h4>{posts.fields.title}</h4>
                 </div>
-
+              </Link>
+              <div className="blogInfo">
                 <div className={styles.blogExcerpt}>
                   <p>{posts.fields.excerpt}</p>
                 </div>
               </div>
-            
-            </Link>
+            </div>
           </div>
-          </div>
+        ))}
+      </div>
 
-
+      <div className="slider">
        
-      ))}
-       </div>
+      </div>
+
+
+
     </div>
   );
 }
