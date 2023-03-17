@@ -39,7 +39,7 @@ export async function getStaticProps({params}) {
 }
 
 export default function blogPosts({ blog }) {
-  const {title, featuredImage, featuredImageAltTag, author, blogPublishedDate, blogText} = blog.fields
+  const {title, featuredImage, featuredImageAltTag, author, blogPublishedDate, blogText, readTime} = blog.fields
   return (
     <div>
       <div className='blogPageTitle'>
@@ -51,6 +51,11 @@ export default function blogPosts({ blog }) {
       <div className='AuthorDate'>
         <h5>{author}</h5>
         <h5>{blogPublishedDate }</h5>
+      </div>
+      <div className='readTime'>
+        {readTime}
+        
+
       </div>
       <div className='blogText'>
         {documentToReactComponents(blogText)}
