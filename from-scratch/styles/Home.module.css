@@ -87,6 +87,9 @@ margin-top: 10px;
     margin-top:  10px;
 }
 
+.swiperSlide{
+    display: none;
+}
 
 @media screen and (max-width: 700px ) {
 
@@ -115,18 +118,35 @@ margin-top: 10px;
 }
 
 .homePageBlogs{
-    display: block;
+    display: none;
 }
 
 .homePageEvents{
-    display: block;
-    padding: 0;
+    display: none;
+    
 }
 
 .hpTitles{
     text-align: center;
     margin-left: 0;
 }
+
+.swiperSlide{
+    display: block;
+    padding: 10px;
+}
+
+
+.sliderTitle{
+    font-size: 18px;
+    color: #E23E57;
+
+}
+
+.sliderExcerpt{
+    font-size: 13px;
+}
+
 }
 
 

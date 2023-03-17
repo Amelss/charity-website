@@ -7,8 +7,8 @@ import Blurb from "@/components/Blurb";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
 
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -47,13 +47,16 @@ export async function getStaticProps() {
   const slide = event.items.map((item) => ({
     title: item.fields.title,
     thumbnail: item.fields.thumbnail.fields,
-    thumbnailAltTag: item.fields.thumbnailAltTag
+    thumbnailAltTag: item.fields.thumbnailAltTag,
+    slug: item.fields.slug
   }))
 
   const blogSlider = blogs.items.map((blogItem) => ({
     title: blogItem.fields.title,
     thumbnail: blogItem.fields.thumbnail.fields,
-    thumbnailAltTag: blogItem.fields.thumbnailAltTag
+    thumbnailAltTag: blogItem.fields.thumbnailAltTag,
+    slug: blogItem.fields.slug,
+    excerpt: blogItem.fields.excerpt
   }));
 
   return {
@@ -199,17 +202,25 @@ export default function Home({
         ))}
       </div>
 
-      <div className="swiperSlide">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-          {slide.map((item) => (
+      <div className={styles.swiperSlide}>
+        <Swiper
+          pagination={true}
+          modules={[Pagination]}
+          loop={true}
+          className="mySwiper"
+        >
+          {slide.slice(0, 4).map((item) => (
             <SwiperSlide key={item.title}>
-              <Image
+              <Link href={`whatsOn/${item.slug}`}>
+                <Image
                 src={`https:${item.thumbnail.file.url}`}
-                width={400}
-                height={400}
+                width={350}
+                height={350}
                 alt={item.thumbnailAltTag}
               />
-              <h2>{item.title}</h2>
+              <h2 className={styles.sliderTitle}>{item.title}</h2>
+              </Link>
+              
             </SwiperSlide>
           ))}
         </Swiper>
@@ -242,17 +253,26 @@ export default function Home({
         ))}
       </div>
 
-      <div className="swiperSlide">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-          {blogSlider.map((blogItem) => (
+      <div className={styles.swiperSlide}>
+        <Swiper
+          pagination={true}
+          modules={[Pagination]}
+          loop={true}
+          className="mySwiper"
+        >
+          {blogSlider.slice(0, 3).map((blogItem) => (
             <SwiperSlide key={blogItem.title}>
-              <Image
+              <Link href={`blogs/${blogItem.slug}` }>
+                <Image
                 src={`https:${blogItem.thumbnail.file.url}`}
                 width={400}
-                height={400}
+                height={500}
                 alt={blogItem.thumbnailAltTag}
               />
-              <h2>{blogItem.title}</h2>
+              <h2 className={styles.sliderTitle}>{blogItem.title}</h2>
+              </Link>
+              <p className={ styles.sliderExcerpt}>{blogItem.excerpt }</p>
+              
             </SwiperSlide>
           ))}
         </Swiper>

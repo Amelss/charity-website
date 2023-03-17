@@ -166,4 +166,18 @@ footer {
     padding-right: 10px;
   }
 
+.swiper-slide a{
+text-decoration: none;
+}
+.swiper-pagination{
+margin-top: 20px;
+position: relative !important; 
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #E23E57;
+  opacity: 1;
+}
+
+
 }
