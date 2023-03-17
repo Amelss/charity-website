@@ -5,14 +5,17 @@ import { createClient } from "contentful";
 import HeroImage from "@/components/HeroImage";
 import Blurb from "@/components/Blurb";
 import Link from "next/link";
-import Slider from "@/components/Slider";
-import EventCard from "@/components/EventCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
-export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
+
+export async function getStaticProps() {
   const res = await client.getEntries({
     content_type: "heroImage",
   });
@@ -38,8 +41,14 @@ export async function getStaticProps() {
   });
 
   const event = await client.getEntries({
-    content_type: 'events'
-  })
+    content_type: "events",
+  });
+
+  const slide = event.items.map((item) => ({
+    title: item.fields.title,
+    thumbnail: item.fields.thumbnail.fields,
+    thumbnailAltTag: item.fields.thumbnailAltTag
+  }))
 
   return {
     props: {
@@ -49,7 +58,8 @@ export async function getStaticProps() {
       sessions: session.items,
       joinTheTeam: joinUs.items,
       blog: blogs.items,
-      events: event.items
+      events: event.items,
+      slide,
     },
     revalidate: 10,
   };
@@ -62,9 +72,9 @@ export default function Home({
   sessions,
   joinTheTeam,
   blog,
-  events
+  events,
+  slide
 }) {
-
 
   return (
     <div>
@@ -172,11 +182,29 @@ export default function Home({
                     alt={eventpost.fields.thumbnailAltTag}
                   />
                 </div>
-                <div className={styles.eventTitle}>{eventpost.fields.title}</div>
+                <div className={styles.eventTitle}>
+                  {eventpost.fields.title}
+                </div>
               </Link>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="swiperSlide">
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+          {slide.map((item) => (
+            <SwiperSlide key={item.title}>
+              <Image
+                src={`https:${item.thumbnail.file.url}`}
+                width={400}
+                height={400}
+                alt={item.thumbnailAltTag}
+              />
+              <h2>{item.title}</h2>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <h1 className={styles.hpTitles}>Latest Blogs</h1>
@@ -206,12 +234,7 @@ export default function Home({
         ))}
       </div>
 
-      <div className="slider">
-       
-      </div>
-
-
-
+      <div className="slider"></div>
     </div>
   );
 }
