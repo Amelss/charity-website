@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import TestimonialCard from "@/components/TestimonialCard";
 
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -59,6 +60,10 @@ export async function getStaticProps() {
     excerpt: blogItem.fields.excerpt
   }));
 
+  const testimonial = await client.getEntries({
+    content_type:'testimonials',
+  });
+
   return {
     props: {
       heroImage: res.items,
@@ -69,7 +74,8 @@ export async function getStaticProps() {
       blog: blogs.items,
       events: event.items,
       slide,
-      blogSlider
+      blogSlider,
+      testimonials: testimonial.items
     },
     revalidate: 10,
   };
@@ -84,9 +90,10 @@ export default function Home({
   blog,
   events,
   slide,
-  blogSlider
+  blogSlider,
+  testimonials
 }) {
-
+console.log(testimonials);
   return (
     <div>
       <Head>
@@ -225,6 +232,16 @@ export default function Home({
           ))}
         </Swiper>
       </div>
+
+      
+      <div className="testimonials">
+        {testimonials.map(quote => (
+          <TestimonialCard key={quote.sys.id} quote={quote } />
+        ))}
+      </div>
+
+
+
 
       <h1 className={styles.hpTitles}>Latest Blogs</h1>
       <div className={styles.homePageBlogs}>
