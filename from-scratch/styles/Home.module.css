@@ -24,17 +24,8 @@
 }
 
 .homePageBlogs{
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    grid-gap: 5px; */
-   
-display: flex;
-justify-content: space-evenly;
- 
-   
-    
-
+    display: flex;
+    justify-content: space-evenly;
 }
 .homePageBlogs a{
     text-decoration: none;
@@ -133,7 +124,7 @@ margin-top: 10px;
 
 .swiperSlide{
     display: block;
-    padding: 10px;
+    padding: 20px;
 }
 
 

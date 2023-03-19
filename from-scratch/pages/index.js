@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import TestimonialCard from "@/components/TestimonialCard";
+import { Parallax } from "react-scroll-parallax";
 
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -105,13 +106,14 @@ console.log(testimonials);
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      {heroImage.map((heroPicture) => (
-        <HeroImage key={heroPicture.sys.id} heroPicture={heroPicture} />
-      ))}
-      {introBlurb.map((intro) => (
-        <Blurb key={intro.sys.id} intro={intro} />
-      ))}
-
+      <Parallax offsetYMin={200} offsetYMax={1500}>
+        {heroImage.map((heroPicture) => (
+          <HeroImage key={heroPicture.sys.id} heroPicture={heroPicture} />
+        ))}
+        {introBlurb.map((intro) => (
+          <Blurb key={intro.sys.id} intro={intro} />
+        ))}
+      </Parallax>
       <div className={styles.services}>
         {aboutUs.map((abouttile) => (
           <Link href={"/about"}>
@@ -220,28 +222,23 @@ console.log(testimonials);
             <SwiperSlide key={item.title}>
               <Link href={`whatsOn/${item.slug}`}>
                 <Image
-                src={`https:${item.thumbnail.file.url}`}
-                width={350}
-                height={350}
-                alt={item.thumbnailAltTag}
-              />
-              <h2 className={styles.sliderTitle}>{item.title}</h2>
+                  src={`https:${item.thumbnail.file.url}`}
+                  width={350}
+                  height={350}
+                  alt={item.thumbnailAltTag}
+                />
+                <h2 className={styles.sliderTitle}>{item.title}</h2>
               </Link>
-              
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      
       <div className="testimonials">
-        {testimonials.map(quote => (
-          <TestimonialCard key={quote.sys.id} quote={quote } />
+        {testimonials.map((quote) => (
+          <TestimonialCard key={quote.sys.id} quote={quote} />
         ))}
       </div>
-
-
-
 
       <h1 className={styles.hpTitles}>Latest Blogs</h1>
       <div className={styles.homePageBlogs}>
@@ -279,17 +276,16 @@ console.log(testimonials);
         >
           {blogSlider.slice(0, 3).map((blogItem) => (
             <SwiperSlide key={blogItem.title}>
-              <Link href={`blogs/${blogItem.slug}` }>
+              <Link href={`blogs/${blogItem.slug}`}>
                 <Image
-                src={`https:${blogItem.thumbnail.file.url}`}
-                width={400}
-                height={500}
-                alt={blogItem.thumbnailAltTag}
-              />
-              <h2 className={styles.sliderTitle}>{blogItem.title}</h2>
+                  src={`https:${blogItem.thumbnail.file.url}`}
+                  width={400}
+                  height={500}
+                  alt={blogItem.thumbnailAltTag}
+                />
+                <h2 className={styles.sliderTitle}>{blogItem.title}</h2>
               </Link>
-              <p className={ styles.sliderExcerpt}>{blogItem.excerpt }</p>
-              
+              <p className={styles.sliderExcerpt}>{blogItem.excerpt}</p>
             </SwiperSlide>
           ))}
         </Swiper>
