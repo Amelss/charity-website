@@ -69,15 +69,13 @@ text-align: center;
     display: block;
     overflow: hidden;
     width: 100%;
+    margin: auto;
 }
 
 .dskImage{
     display: none;
 }
 
-.mobileImage{
-  margin: auto;
-}
 
 .newsletter{
     display: block;
@@ -86,16 +84,17 @@ text-align: center;
 
 .newsletterForm{
    margin: auto;
-   width: 90%;
+    width: 80%;
 }
 
 .inputs{
-     width: 100%;
+     
+    
      
 }
 
 .inputOptions{
-    margin: auto;
+   
 }
 
 
@@ -108,7 +107,7 @@ margin: auto;
 }
 
 .button{
-    width: 100%;
+    width: 80%;
 }
 
 }

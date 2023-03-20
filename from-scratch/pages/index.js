@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import TestimonialCard from "@/components/TestimonialCard";
 import NewsletterSection from "@/components/NewsletterSection";
+import CharityLogos from "@/components/CharityLogos";
 
 
   const client = createClient({
@@ -70,6 +71,10 @@ export async function getStaticProps() {
     content_type: "newsletterImage",
   });
 
+  const charities = await client.getEntries({
+    content_type: "charitySupporters",
+  });
+
   return {
     props: {
       heroImage: res.items,
@@ -82,7 +87,8 @@ export async function getStaticProps() {
       slide,
       blogSlider,
       testimonials: testimonial.items,
-      newsletterImage: newsletterSignUp.items
+      newsletterImage: newsletterSignUp.items,
+      charitySupporters: charities.items
     },
     revalidate: 10,
   };
@@ -99,11 +105,12 @@ export default function Home({
   slide,
   blogSlider,
   testimonials,
-  newsletterImage
+  newsletterImage,
+  charitySupporters
 })
 
 {
-console.log(newsletterImage);
+
   return (
     <div>
       <Head>
@@ -304,7 +311,12 @@ console.log(newsletterImage);
         {newsletterImage.map(news => (
           <NewsletterSection key={news.sys.id} news={news} />
       ))}
-      
+      </div>
+
+      <div className="charitySupporters">
+        {charitySupporters.map(charity => (
+          <CharityLogos key={charity.sys.id} charity={charity } />
+          ))}
       </div>
     </div>
   );
