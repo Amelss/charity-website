@@ -308,16 +308,21 @@ export default function Home({
       </div>
 
       <div className="newsletter">
-        {newsletterImage.map(news => (
+        {newsletterImage.map((news) => (
           <NewsletterSection key={news.sys.id} news={news} />
-      ))}
+        ))}
       </div>
-
-      <div className="charitySupporters">
-        {charitySupporters.map(charity => (
-          <CharityLogos key={charity.sys.id} charity={charity } />
-          ))}
+      
+      <div className={styles.charitySupporters}>
+        <h2 className={styles.ourSupporters}>Our Supporters</h2>
+      <div className={styles.charities}>
+        
+        {charitySupporters.map((charity) => (
+          <CharityLogos key={charity.sys.id} charity={charity} />
+        ))}
       </div>
+      </div>
+      
     </div>
   );
 }
