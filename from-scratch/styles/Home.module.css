@@ -82,7 +82,7 @@ margin-top: 10px;
     display: none;
 }
 
-@media screen and (max-width: 700px ) {
+@media screen and (max-width: 1000px ) {
 
 .desktopTileImg{
     display: none;
@@ -117,7 +117,7 @@ margin-top: 10px;
     
 }
 
-.hpTitles{
+.hpTitles, .upcomingTitles{
     text-align: center;
     margin-left: 0;
 }
@@ -133,10 +133,16 @@ margin-top: 10px;
     color: #E23E57;
 
 }
-
+.eventsSliderTitle{
+    font-size: 18px;
+    color: #E23E57;
+    margin-left: 7px;
+}
 .sliderExcerpt{
     font-size: 13px;
+    text-align: left;
 }
+
 
 }
 

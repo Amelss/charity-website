@@ -10,7 +10,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import TestimonialCard from "@/components/TestimonialCard";
-import { Parallax } from "react-scroll-parallax";
+import NewsletterSection from "@/components/NewsletterSection";
+
 
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -65,6 +66,10 @@ export async function getStaticProps() {
     content_type:'testimonials',
   });
 
+  const newsletterSignUp = await client.getEntries({
+    content_type: "newsletterImage",
+  });
+
   return {
     props: {
       heroImage: res.items,
@@ -76,7 +81,8 @@ export async function getStaticProps() {
       events: event.items,
       slide,
       blogSlider,
-      testimonials: testimonial.items
+      testimonials: testimonial.items,
+      newsletterImage: newsletterSignUp.items
     },
     revalidate: 10,
   };
@@ -92,9 +98,12 @@ export default function Home({
   events,
   slide,
   blogSlider,
-  testimonials
-}) {
-console.log(testimonials);
+  testimonials,
+  newsletterImage
+})
+
+{
+console.log(newsletterImage);
   return (
     <div>
       <Head>
@@ -106,14 +115,14 @@ console.log(testimonials);
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <Parallax offsetYMin={200} offsetYMax={1500}>
-        {heroImage.map((heroPicture) => (
-          <HeroImage key={heroPicture.sys.id} heroPicture={heroPicture} />
-        ))}
-        {introBlurb.map((intro) => (
-          <Blurb key={intro.sys.id} intro={intro} />
-        ))}
-      </Parallax>
+
+      {heroImage.map((heroPicture) => (
+        <HeroImage key={heroPicture.sys.id} heroPicture={heroPicture} />
+      ))}
+      {introBlurb.map((intro) => (
+        <Blurb key={intro.sys.id} intro={intro} />
+      ))}
+
       <div className={styles.services}>
         {aboutUs.map((abouttile) => (
           <Link href={"/about"}>
@@ -219,15 +228,15 @@ console.log(testimonials);
           className="mySwiper"
         >
           {slide.slice(0, 4).map((item) => (
-            <SwiperSlide key={item.title}>
+            <SwiperSlide key={item.title} className={styles.swiperBox}>
               <Link href={`whatsOn/${item.slug}`}>
                 <Image
                   src={`https:${item.thumbnail.file.url}`}
-                  width={350}
-                  height={350}
+                  width={360}
+                  height={360}
                   alt={item.thumbnailAltTag}
                 />
-                <h2 className={styles.sliderTitle}>{item.title}</h2>
+                <h2 className={styles.eventsSliderTitle}>{item.title}</h2>
               </Link>
             </SwiperSlide>
           ))}
@@ -291,7 +300,12 @@ console.log(testimonials);
         </Swiper>
       </div>
 
-      <div className="slider"></div>
+      <div className="newsletter">
+        {newsletterImage.map(news => (
+          <NewsletterSection key={news.sys.id} news={news} />
+      ))}
+      
+      </div>
     </div>
   );
 }
