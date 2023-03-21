@@ -57,7 +57,7 @@ export default function events({ events }) {
         <h4>{eventDate}</h4>
         <p>
           
-          {!ticketLink ? <span>{nonTicketed }</span> : <Link href={ticketLink}>Click here for tickets</Link> }
+          {ticketLink ? <Link href={ticketLink}>Click here for tickets</Link> : <span>{nonTicketed }</span>  }
           
         </p>
         <div>
