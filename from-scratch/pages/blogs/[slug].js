@@ -33,8 +33,8 @@ export async function getStaticProps({params}) {
   })
 console.log(params.slug);
   return {
-    props: { blog: items[0] },
-    revalidate: 10
+    props: { blog: items[0] }
+   
   }
 }
 
