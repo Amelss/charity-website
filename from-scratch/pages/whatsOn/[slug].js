@@ -24,7 +24,7 @@ const client = createClient({
    });
    return {
      paths,
-     fallback: false,
+     fallback: true,
    };
  };
 
@@ -42,6 +42,7 @@ console.log(params.slug);
  }
 
 export default function events({ events }) {
+  if (!events) return <div>Loading...</div>;
 
   const {title, featuredImage, featuredImageAltTag, eventDate, ticketLink, eventText, nonTicketed} = events.fields
   return (

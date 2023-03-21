@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
   })
   return {
     paths,
-    fallback: false
+    fallback: true
   }
 }
  
@@ -39,6 +39,7 @@ console.log(params.slug);
 }
 
 export default function blogPosts({ blog }) {
+  if (!blog) return <div>Loading...</div>;
   const {title, featuredImage, featuredImageAltTag, author, blogPublishedDate, blogText, readTime} = blog.fields
   return (
     <div>
