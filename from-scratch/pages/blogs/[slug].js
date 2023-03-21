@@ -3,7 +3,7 @@ import { createClient } from "contentful";
 import Image from 'next/image';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
- export const client = createClient({
+ const client = createClient({
    space: process.env.CONTENTFUL_SPACE_ID,
    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
  });

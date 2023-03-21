@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 
- export const client = createClient({
+const client = createClient({
    space: process.env.CONTENTFUL_SPACE_ID,
    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
  });
@@ -16,7 +16,7 @@ import Link from 'next/link';
      content_type: "events",
    });
 
-   const paths = res.items.map((item) => {
+   const paths = res.items.map(item => {
  
      return {
        params: { slug: item.fields.slug },
