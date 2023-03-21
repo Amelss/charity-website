@@ -43,7 +43,7 @@ console.log(params.slug);
 
 export default function events({ events }) {
 
-  const {title, featuredImage, featuredImageAltTag, eventDate, ticketLink, eventText} = events.fields
+  const {title, featuredImage, featuredImageAltTag, eventDate, ticketLink, eventText, nonTicketed} = events.fields
   return (
     <div>
       <div className='eventTitle'>
@@ -54,7 +54,10 @@ export default function events({ events }) {
       </div>
       <div className='eventInfo'>
         <h4>{eventDate}</h4>
-        <p><Link href={ticketLink}>Click here for tickets</Link></p>
+        <p>
+          {ticketLink ? <Link href={ticketLink}>Click here for tickets</Link> : <span>{nonTicketed }</span>}
+          
+        </p>
         <div>
           {documentToReactComponents(eventText)}
         </div>
