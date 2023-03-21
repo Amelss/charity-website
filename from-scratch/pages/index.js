@@ -209,7 +209,7 @@ export default function Home({
         {events.slice(0, 4).map((eventpost) => (
           <div key={eventpost.sys.id} eventpost={eventpost}>
             <div className={styles.eventsCard}>
-              <Link href={`/whatson/${eventpost.fields.slug}`}>
+              <Link href={`/whatOn/${eventpost.fields.slug}`}>
                 <div className="eventThumbNail">
                   <Image
                     src={`https:${eventpost.fields.thumbnail.fields.file.url}`}
@@ -236,7 +236,7 @@ export default function Home({
         >
           {slide.slice(0, 4).map((item) => (
             <SwiperSlide key={item.title} className={styles.swiperBox}>
-              <Link href={`whatson/${item.slug}`}>
+              <Link href={`whatsOn/${item.slug}`}>
                 <Image
                   src={`https:${item.thumbnail.file.url}`}
                   width={360}

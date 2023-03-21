@@ -7,7 +7,7 @@ export default function EventCard({event}) {
       
       <div>
           <div className='events'>
-              <Link href={`/whatson/${slug}`}>
+              <Link href={`/whatsOn/${slug}`}>
              
                 <div className='eventTitle'>
               {title}
