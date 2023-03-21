@@ -19,9 +19,9 @@ export async function getStaticProps() {
   return {
     props: {
       events: res.items,
- 
-    },
-    revalidate: 10,
+      revalidate: 10,
+    }
+    
   };
 }
 
