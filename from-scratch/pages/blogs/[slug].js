@@ -31,7 +31,7 @@ export async function getStaticProps({params}) {
     content_type: 'blog',
     'fields.slug': params.slug
   })
-
+console.log(params.slug);
   return {
     props: { blog: items[0] },
     revalidate: 10
