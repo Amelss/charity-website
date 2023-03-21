@@ -36,7 +36,7 @@ const client = createClient({
 console.log(params.slug);
    return {
      props: { events: items[0] },
-     revalidate: 10,
+     revalidate: 10
    };
    
  }
