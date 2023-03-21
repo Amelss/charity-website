@@ -2,8 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 export default function EventCard({event}) {
-    const {thumbnail, thumbnailAltTag, title, eventDate, slug} = event.fields
-  return (
+    const { thumbnail, thumbnailAltTag, title, eventDate, slug } = event.fields
+    console.log(slug);
+    return (
+      
       <div>
           <div className='events'>
               <Link href={`/whatson/${slug}`}>

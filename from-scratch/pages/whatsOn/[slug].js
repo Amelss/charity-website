@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 
- const client = createClient({
+ export const client = createClient({
    space: process.env.CONTENTFUL_SPACE_ID,
    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
  });
@@ -38,6 +38,7 @@ import Link from 'next/link';
      props: { events: items[0] },
      revalidate: 10,
    };
+   
  }
 
 export default function events({ events }) {

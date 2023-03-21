@@ -23,7 +23,7 @@ const handleOpen = () => {
             <Link href={"/"}>Home</Link>
             <Link href={"/about"}>About Us</Link>
             <Link href={"/sessions"}>Sessions</Link>
-            <Link href={"/whatsOn"}>Events</Link>
+            <Link href={"/whatson"}>Events</Link>
           </div>
         </div>
         <div className="donate-btn-container">
