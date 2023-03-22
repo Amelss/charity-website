@@ -12,6 +12,7 @@ import { Pagination } from "swiper";
 import TestimonialCard from "@/components/TestimonialCard";
 import NewsletterSection from "@/components/NewsletterSection";
 import CharityLogos from "@/components/CharityLogos";
+import EventCard from "@/components/EventCard";
 
 
 const client = createClient({
@@ -205,27 +206,29 @@ export default function Home({
       </div>
 
       <h1 className={styles.upcomingTitles}>Upcoming Events</h1>
-      <div className={styles.homePageEvents}>
-        {events.slice(0, 4).map((eventpost) => (
+   
+        {/* {events.slice(0, 4).map((eventpost) => (
           <div key={eventpost.sys.id} eventpost={eventpost}>
-            <div className={styles.eventsCard}>
-              <Link href={`/whatsOn/${eventpost.fields.slug}`}>
-                <div className="eventThumbNail">
-                  <Image
-                    src={`https:${eventpost.fields.thumbnail.fields.file.url}`}
-                    width={300}
-                    height={300}
-                    alt={eventpost.fields.thumbnailAltTag}
-                  />
-                </div>
-                <div className={styles.eventTitle}>
-                  {eventpost.fields.title}
-                </div>
-              </Link>
-            </div>
+            <Link href={`/whatsOn/${eventpost.fields.slug}`}>
+              <Image
+                src={`https:${eventpost.fields.thumbnail.fields.file.url}`}
+                width={300}
+                height={300}
+                alt={eventpost.fields.thumbnailAltTag}
+                className={styles.eventImg}
+              />
+
+              <h3 className={styles.eventTitle}>{eventpost.fields.title}</h3>
+            </Link>
           </div>
-        ))}
-      </div>
+        ))} */}
+
+        <div className={styles.eventCard}>
+          {events.map((event) => (
+            <EventCard key={event.sys.id} event={event} />
+          ))}
+        </div>
+      
 
       <div className={styles.swiperSlide}>
         <Swiper
@@ -312,17 +315,15 @@ export default function Home({
           <NewsletterSection key={news.sys.id} news={news} />
         ))}
       </div>
-      
+
       <div className={styles.charitySupporters}>
         <h2 className={styles.ourSupporters}>Our Supporters</h2>
-      <div className={styles.charities}>
-        
-        {charitySupporters.map((charity) => (
-          <CharityLogos key={charity.sys.id} charity={charity} />
-        ))}
+        <div className={styles.charities}>
+          {charitySupporters.map((charity) => (
+            <CharityLogos key={charity.sys.id} charity={charity} />
+          ))}
+        </div>
       </div>
-      </div>
-      
     </div>
   );
 }
