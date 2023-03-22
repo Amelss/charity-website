@@ -79,3 +79,32 @@
 
     
 }
+
+@media screen and (min-width: 702px ) and (max-width: 1000px) {
+
+   .testimonialCard{
+        text-align: center;
+    }
+
+    .testimonial{
+        display: block;
+        padding: 0;
+    }
+
+    .testimonialText{
+        padding: 30px;
+        font-size: 35px;
+        width: auto
+        
+    }
+
+    .clientName{
+        font-size: 18px;
+    }
+
+    .testimonialTitle{
+        text-align: center;
+        margin-left: 0;
+    }
+
+}
