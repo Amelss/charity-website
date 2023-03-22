@@ -13,6 +13,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import NewsletterSection from "@/components/NewsletterSection";
 import CharityLogos from "@/components/CharityLogos";
 import EventCard from "@/components/EventCard";
+import BlogCard from "@/components/BlogCard";
 
 
 const client = createClient({
@@ -206,29 +207,12 @@ export default function Home({
       </div>
 
       <h1 className={styles.upcomingTitles}>Upcoming Events</h1>
-   
-        {/* {events.slice(0, 4).map((eventpost) => (
-          <div key={eventpost.sys.id} eventpost={eventpost}>
-            <Link href={`/whatsOn/${eventpost.fields.slug}`}>
-              <Image
-                src={`https:${eventpost.fields.thumbnail.fields.file.url}`}
-                width={300}
-                height={300}
-                alt={eventpost.fields.thumbnailAltTag}
-                className={styles.eventImg}
-              />
 
-              <h3 className={styles.eventTitle}>{eventpost.fields.title}</h3>
-            </Link>
-          </div>
-        ))} */}
-
-        <div className={styles.eventCard}>
-          {events.map((event) => (
-            <EventCard key={event.sys.id} event={event} />
-          ))}
-        </div>
-      
+      <div className={styles.eventCard}>
+        {events.map((event) => (
+          <EventCard key={event.sys.id} event={event} />
+        ))}
+      </div>
 
       <div className={styles.swiperSlide}>
         <Swiper
@@ -284,6 +268,12 @@ export default function Home({
             </div>
           </div>
         ))}
+
+        {/* <div className={styles.blogs}>
+          {blog.map((blog) => (
+            <BlogCard key={blog.sys.id} blog={blog} />
+          ))}
+        </div> */}
       </div>
 
       <div className={styles.swiperSlide}>
