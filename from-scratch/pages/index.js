@@ -209,7 +209,7 @@ export default function Home({
         {events.slice(0, 4).map((eventpost) => (
           <div key={eventpost.sys.id} eventpost={eventpost}>
             <div className={styles.eventsCard}>
-              <Link href={`/whatOn/${eventpost.fields.slug}`}>
+              <Link href={`/whatsOn/${eventpost.fields.slug}`}>
                 <div className="eventThumbNail">
                   <Image
                     src={`https:${eventpost.fields.thumbnail.fields.file.url}`}
