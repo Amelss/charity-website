@@ -4,6 +4,9 @@
     justify-content: space-evenly;
     margin-top: 50px;
 }
+.services img{
+     border-top: #E23E57 solid 8px;
+}
 
 .services a{
   text-decoration: none;
@@ -13,6 +16,7 @@
 .desktopTileImg{
     padding: 10px;
 }
+
 
 .mobileTileImg{
     display: none;
@@ -26,6 +30,10 @@
 .homePageBlogs{
     display: flex;
     justify-content: space-evenly;
+}
+
+.homePageBlogs img{
+   border-top: #E23E57 solid 8px;
 }
 .homePageBlogs a{
     text-decoration: none;
@@ -152,8 +160,12 @@ padding-top: 20px;
 .swiperSlide{
     display: block;
     padding: 20px;
+      
 }
 
+.swiperSlide img{
+border-top: #E23E57 solid 8px;
+}
 
 .sliderTitle{
     font-size: 18px;
