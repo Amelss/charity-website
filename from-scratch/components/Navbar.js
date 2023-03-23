@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react';
+import { stack as Menu } from "react-burger-menu";
 
 export default function Navbar() {
 
@@ -14,10 +15,17 @@ const handleOpen = () => {
 
   return (
     <div>
-      <nav className='desktop-nav'>
+      <nav className="desktop-nav">
         <div className="logo-nav-links">
           <div className="logo">
-           <Link href={'/'}><Image src={"/logo.png"} width={100} height={100} alt={ 'Pink and white round logo with a paintbrush'}  /></Link> 
+            <Link href={"/"}>
+              <Image
+                src={"/logo.png"}
+                width={100}
+                height={100}
+                alt={"Pink and white round logo with a paintbrush"}
+              />
+            </Link>
           </div>
           <div className="nav-links">
             <Link href={"/"}>Home</Link>
@@ -36,14 +44,22 @@ const handleOpen = () => {
         </div>
       </nav>
 
-      <nav  className="mobile-nav">
+      <nav className="mobile-nav">
         <div className="mobile-logo">
-          <Link href={'/'}><Image src={"/logo.png"} width={70} height={70} alt={ 'Pink and white round logo with a paintbrush'} /></Link> 
+          <Link href={"/"}>
+            <Image
+              src={"/logo.png"}
+              width={70}
+              height={70}
+              alt={"Pink and white round logo with a paintbrush"}
+            />
+          </Link>
         </div>
 
-        
-          <button onClick={handleOpen} className="mobile-menu-btn">
-            {navBarOpen ? 
+        <Menu right>
+          {/* <button onClick={handleOpen} className="mobile-menu-btn">
+          {navBarOpen ? 
+            
             <div className='mobile-nav-links'>
               <div className='mobile-links-inner'>
                 
@@ -64,13 +80,26 @@ const handleOpen = () => {
               </div>
               
               </div>
+           
          : <div></div>
             }
 
           <Image src={'/burger-menu.svg'} width={40} height={40} alt={'mobile menu'} />
-          </button>
-          
-        
+          </button> */}
+          <div className="mobile-nav-links">
+            <Link href={"/"}>Home</Link>
+            <Link href={"/about"}>About Us</Link>
+            <Link href={"/sessions"}>Sessions</Link>
+            <Link href={"/whatsOn"}>Events</Link>
+            <Link
+              href={"https://uk.virginmoney.com/service/virgin-money-giving/"}
+              target={"_blank"}
+            >
+              {" "}
+              Donate
+            </Link>
+          </div>
+        </Menu>
       </nav>
     </div>
   );

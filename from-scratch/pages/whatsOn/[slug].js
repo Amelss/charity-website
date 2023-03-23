@@ -33,7 +33,7 @@ const client = createClient({
      content_type: "events",
      "fields.slug": params.slug
    });
-console.log(params.slug);
+
    return {
      props: { events: items[0] }
   
