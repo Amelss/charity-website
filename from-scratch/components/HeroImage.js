@@ -43,6 +43,19 @@ export default function HeroImage({ heroPicture }) {
                     <h4 className={styles.imageSubHeading}>{heroPicture.fields.subheading}</h4>
                 </div>
         </div>
+           <div className={styles.ipadImg}>
+          <Image
+            src={`https:${file.url}`}
+            width={750}
+            height={400}
+            alt={heroPicture.fields.altTag}
+                />
+                <div className={styles.imageText}>
+                    <h1 className={styles.imageHeading}>{heroPicture.fields.heading}</h1>
+                    <h4 className={styles.imageSubHeading}>{heroPicture.fields.subheading}</h4>
+                </div>
+          
+        </div>
       </div>
     );
 }

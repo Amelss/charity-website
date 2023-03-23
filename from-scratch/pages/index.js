@@ -246,7 +246,7 @@ export default function Home({
       <h1 className={styles.hpTitles}>Latest Blogs</h1>
       <div className={styles.homePageBlogs}>
         {blog.slice(0, 3).map((posts) => (
-          <div key={posts.sys.id} posts={posts}>
+          <div key={posts.sys.id} posts={posts} className={styles.blogs}>
             <div className={styles.homePageBlogCard}>
               <Link href={`/blogs/${posts.fields.slug}`}>
                 <Image

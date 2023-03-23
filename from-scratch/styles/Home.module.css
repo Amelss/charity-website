@@ -231,6 +231,40 @@ padding-top: 20px;
     margin-left: 0;
 }
 
+.homePageBlogs{
+  display: block;
+  margin: 0;
+
+}
+.homePageBlogs a{
+    text-decoration: none;
+    
+}
+.homePageBlogCard{
+width: 410px;
+margin-top: 10px;
+
+}
+
+.blogs{
+display: flex;
+justify-content: center;
+}
+
+.charities{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   text-align: center;
+}
+
+.ourSupporters{
+    text-align: center;
+    font-size: 25px;
+    margin-left: 0;
+}
+
+
+
 }
 
 @media screen and (min-width: 1700px ){
