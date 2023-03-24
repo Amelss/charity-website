@@ -13,6 +13,7 @@ export async function getStaticProps() {
  
   const res = await client.getEntries({
     content_type: "events",
+    order: "sys.createdAt",
   });
 
 

@@ -44,10 +44,12 @@ export async function getStaticProps() {
 
   const blogs = await client.getEntries({
     content_type: "blog",
+    order: "-sys.createdAt",
   });
 
   const event = await client.getEntries({
     content_type: "events",
+    order: "-sys.createdAt",
   });
 
   const slide = event.items.map((item) => ({

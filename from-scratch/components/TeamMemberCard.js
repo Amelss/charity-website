@@ -3,7 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/JoinTheTeam.module.css'
 
 export default function TeamMemberCard({ member }) {
-    const {teamMemberPhoto, teamMemberPhotoAltTag, teamMemberName, jobTitle } = member.fields
+    const { teamMemberPhoto, teamMemberPhotoAltTag, teamMemberName, jobTitle } = member.fields
+    const {createdAt} = member.sys
   return (
       <div>
           <div className={styles.teamMembers}>
