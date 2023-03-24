@@ -17,17 +17,28 @@ body{
 }
 
 
-
 nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 10px;
+ 
 }
 
 .logo-nav-links{
   display: flex;
   align-items: center;
+  
+  
+}
+
+.desktop-nav{
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20; 
+  background-color: white;
 }
 
 .nav-links{
@@ -54,8 +65,12 @@ nav{
     height: 100px;
     background: #E23E57;
     border: none;
+    
 }
 
+.donate-btn-container {
+  padding: 0 20px;
+}
 .donate-btn{
   color: white;
   font-weight: 600;
@@ -121,6 +136,15 @@ footer {
 
 .mobile-nav{
     display: flex;
+    align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20; 
+  background-color: white;
+  padding: 10px;
   }
 
 .desktop-nav{
