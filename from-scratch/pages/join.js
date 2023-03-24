@@ -2,6 +2,7 @@ import React from 'react'
 import { createClient } from "contentful";
 import JoinTheTeamPage from '@/components/JoinTheTeamPage';
 import Head from 'next/head';
+import TeamMemberCard from '@/components/TeamMemberCard';
 
 
 export async function getStaticProps() {
@@ -14,14 +15,20 @@ const client = createClient ({
       content_type: "joinTheTeam",
     });
 
+  const team = await client.getEntries({
+    content_type: 'teamMembers'
+  });
+
     return {
-        props: { joinTheTeam: res.items },
-        revalidate: 10
+      props: {
+        joinTheTeam: res.items,
+        teamMembers: team.items}
+       
     }
 }
 
-export default function join({joinTheTeam}) {
-
+export default function join({joinTheTeam, teamMembers}) {
+console.log(teamMembers);
   return (
       <div>
            <Head>
@@ -30,9 +37,17 @@ export default function join({joinTheTeam}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-          {joinTheTeam.map(join => (
-              <JoinTheTeamPage key={join.sys.id} join={join} />
+      {joinTheTeam.map(join => (
+            <div key={join.sys.id} >
+          
+          <JoinTheTeamPage join={join} />
+        </div>
+        
           ))}
+      
+      {teamMembers.map(member => (
+            <TeamMemberCard key={member.sys.id} member={member} />
+            ))}
           
     </div>
   )

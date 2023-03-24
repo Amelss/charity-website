@@ -6,11 +6,11 @@ import { stack as Menu } from "react-burger-menu";
 
 export default function Navbar() {
 
-const [navBarOpen, setNavBarOpen] = useState(false);
+// const [navBarOpen, setNavBarOpen] = useState(false);
 
-const handleOpen = () => {
-  setNavBarOpen(!navBarOpen);
-};
+// const handleOpen = () => {
+//   setNavBarOpen(!navBarOpen);
+// };
 
 
   return (

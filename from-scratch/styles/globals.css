@@ -13,13 +13,10 @@ body{
 
 .page-content {
   padding-bottom: 400px;
+  padding-top: 150px;
 
 }
 
-
-nav{
- 
-}
 
 .logo-nav-links{
   display: flex;
@@ -29,7 +26,7 @@ nav{
 }
 
 .desktop-nav{
-  padding: 20px 10px;
+  padding: 7px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,9 +57,8 @@ nav{
 
 
 .donate-btn-container .donate-btn{
-    border-radius: 94% 30% 40% 70% / 67% 40% 56% 50%;
-    width: 100px;
-    height: 100px;
+    border-radius: 5px;
+    padding: 15px;
     background: #E23E57;
     border: none;
     
@@ -74,7 +70,7 @@ nav{
 .donate-btn{
   color: white;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;
 }
@@ -135,8 +131,8 @@ footer {
 }
 
 .mobile-nav{
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   position: fixed;
   width: 100%;

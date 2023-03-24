@@ -1,0 +1,39 @@
+.joinFeaturedImage{
+display: block;
+margin: auto;
+}
+
+.mobileJoinFeaturedImage{
+    display: none;
+}
+
+.joinTitle{
+    text-align: center;
+    color: #E23E57;
+}
+
+.teamMemberFeaturedImage, .mobileTeamMemberFeaturedImage{
+    border-radius: 100%;
+}
+
+.mobileTeamMemberFeaturedImage{
+    display: none;
+}
+@media screen and (max-width: 700px ){
+    .joinFeaturedImage{
+        display: none;
+}
+
+.mobileJoinFeaturedImage{
+  display: block;
+  margin: auto;
+}
+
+.teamMemberFeaturedImage{
+    display: none;
+}
+.mobileTeamMemberFeaturedImage{
+    display: block;
+}
+
+}
