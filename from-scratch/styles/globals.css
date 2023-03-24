@@ -39,8 +39,14 @@ nav{
   text-decoration: none;
   color: black;
   margin-left: 15px;
+  
 
 }
+
+.nav-links a:hover{
+  border-bottom: #E23E57 3px solid;
+}
+
 
 .donate-btn-container .donate-btn{
     border-radius: 94% 30% 40% 70% / 67% 40% 56% 50%;
