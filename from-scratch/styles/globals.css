@@ -26,7 +26,7 @@ body{
 }
 
 .desktop-nav{
-  padding: 7px 10px;
+  padding: 7px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,7 +65,7 @@ body{
 }
 
 .donate-btn-container {
-  padding: 0 20px;
+  padding: 0 40px;
 }
 .donate-btn{
   color: white;
