@@ -57,35 +57,6 @@ const handleOpen = () => {
         </div>
 
         <Menu right>
-          {/* <button onClick={handleOpen} className="mobile-menu-btn">
-          {navBarOpen ? 
-            
-            <div className='mobile-nav-links'>
-              <div className='mobile-links-inner'>
-                
-                <div>
-                  <Link href={"/"}>Home</Link>
-                  <Link href={"/about"}>About Us</Link>
-                  <Link href={"/sessions"}>Sessions</Link>
-                  <Link href={"/whatsOn"}>Events</Link>
-                  <Link
-                    href={"https://uk.virginmoney.com/service/virgin-money-giving/"}
-                    target={"_blank"}
-                  > Donate
-                      </Link>
-                </div>
-                <div >
-                  <img src={'/close.svg'} width={40} height={40} alt={'close mobile menu button'} className='close-btn'/>
-                </div>
-              </div>
-              
-              </div>
-           
-         : <div></div>
-            }
-
-          <Image src={'/burger-menu.svg'} width={40} height={40} alt={'mobile menu'} />
-          </button> */}
           <div className="mobile-nav-links">
             <Link href={"/"}>Home</Link>
             <Link href={"/about"}>About Us</Link>
