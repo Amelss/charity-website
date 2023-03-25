@@ -4,10 +4,10 @@ import styles from '../styles/JoinTheTeam.module.css'
 
 export default function TeamMemberCard({ member }) {
     const { teamMemberPhoto, teamMemberPhotoAltTag, teamMemberName, jobTitle } = member.fields
-    const {createdAt} = member.sys
+
   return (
       <div>
-          <div className={styles.teamMembers}>
+          <div className={styles.theTeam}>
               <div className={styles.teamMemberCards}>
                   <Image
                     src={`https:${teamMemberPhoto.fields.file.url}`}
@@ -18,17 +18,16 @@ export default function TeamMemberCard({ member }) {
                   />
                   <Image
                     src={`https:${teamMemberPhoto.fields.file.url}`}
-                    width={140}
-                    height={140}
+                    width={160}
+                    height={160}
                     alt={teamMemberPhotoAltTag}
                       className={styles.mobileTeamMemberFeaturedImage}
                   />
-                  <h4>{teamMemberName}</h4>
-                  <p>{jobTitle }</p>
+                  <h4 className={styles.teamMemberName}>{teamMemberName}</h4>
+                  <h4 className={styles.jobTitle}>{jobTitle }</h4>
               </div>
-            
           </div>
-         
+              
           
     </div>
   )

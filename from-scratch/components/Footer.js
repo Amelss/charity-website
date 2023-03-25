@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="quick-links">
               <h3>Quick Links</h3>
               <Link href={"/about"}>About Us</Link>
-              <Link href={"/about"}>Meet the Team</Link>
+              <Link href={"/join"}>Meet the Team</Link>
               <Link href={"/sessions"}>Sessions</Link>
               <Link href={"https://uk.virginmoney.com/service/virgin-money-giving/"}
                 target={"_blank"}>Donate</Link>

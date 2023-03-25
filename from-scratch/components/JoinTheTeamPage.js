@@ -5,7 +5,7 @@ import styles from '../styles/JoinTheTeam.module.css'
 
 
 export default function JoinTheTeamPage({ join }) {
-  const { featuredImage, title, pageText, featuredImageAltTag } = join.fields
+  const { featuredImage, title, pageText, featuredImageAltTag} = join.fields
   
   return (
       <div>
