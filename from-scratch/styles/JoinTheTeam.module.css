@@ -40,7 +40,9 @@ margin: auto;
 }
 
 .joinText{
-    padding-bottom: 40px;
+    padding: 40px 50px;
+    font-size: 20px;
+  
 }
 
 .photoDesc{
@@ -59,9 +61,13 @@ margin: auto;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 18px;
+   
 
 }
 
+.btnContainer{
+    padding-left: 50px;
+}
 
 @media screen and (max-width: 700px ){
     .joinFeaturedImage{
@@ -95,11 +101,14 @@ margin: auto;
 
 .btnContainer{
    text-align: center;
+   padding-left: 0;
   
 }
 
 .joinText{
     text-align: center;
     padding: 20px;
+    font-size: 18px;
+    width: auto;
 }
 }
