@@ -53,8 +53,8 @@ margin: auto;
 .joinBtn{
     background-color: #E23E57;
     border: none;
-    border-radius: 5px;
-    padding: 15px;
+    border-radius: 10px;
+    padding: 15px 25px;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
