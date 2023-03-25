@@ -14,8 +14,8 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { sessions: res.items },
-    revalidate: 10
+    props: { sessions: res.items }
+  
   }
 }
 

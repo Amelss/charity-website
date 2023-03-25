@@ -93,8 +93,8 @@ export async function getStaticProps() {
       testimonials: testimonial.items,
       newsletterImage: newsletterSignUp.items,
       charitySupporters: charities.items
-    },
-    revalidate: 10,
+    }
+
   };
 }
 
