@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Link from 'next/link';
+import { format } from "date-fns";
 
 
 
@@ -34,17 +35,24 @@ const client = createClient({
      "fields.slug": params.slug
    });
 
+   const dateField = items[0].fields.eventDate;
+   const dateObject = new Date(dateField);
+   const formattedDate = format(dateObject, "dd-MM-yyyy");
+
    return {
-     props: { events: items[0] }
+     props: {
+       events: items[0],
+      formattedDate }
   
    };
    
  }
 
-export default function events({ events }) {
+export default function events({ events , formattedDate}) {
+  console.log(events);
   if (!events) return <div>Loading...</div>;
 
-  const {title, featuredImage, featuredImageAltTag, ticketLink, eventText, nonTicketed} = events.fields
+  const {title, featuredImage, featuredImageAltTag, ticketLink, eventText, nonTicketed, eventDate} = events.fields
   return (
     <div>
       <div className='eventTitle'>
@@ -53,6 +61,7 @@ export default function events({ events }) {
       <div className='eventImg'>
         <Image src={`https:${featuredImage.fields.file.url}` } width={400 } height={400 } alt={featuredImageAltTag } />
       </div>
+      <p>{ formattedDate}</p>
       <div className='eventInfo'>
   
         <p>
