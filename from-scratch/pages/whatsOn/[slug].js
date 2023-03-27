@@ -38,7 +38,7 @@ const client = createClient({
 
    const dateField = items[0].fields.eventDate;
    const dateObject = new Date(dateField);
-   const formattedDate = format(dateObject, "dd-MM-yyyy");
+   const formattedDate = format(dateObject, "dd, MMM, yyyy");
 
    return {
      props: {
