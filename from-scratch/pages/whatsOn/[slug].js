@@ -44,7 +44,7 @@ const client = createClient({
 export default function events({ events }) {
   if (!events) return <div>Loading...</div>;
 
-  const {title, featuredImage, featuredImageAltTag, eventDate, ticketLink, eventText, nonTicketed} = events.fields
+  const {title, featuredImage, featuredImageAltTag, ticketLink, eventText, nonTicketed} = events.fields
   return (
     <div>
       <div className='eventTitle'>
@@ -54,7 +54,7 @@ export default function events({ events }) {
         <Image src={`https:${featuredImage.fields.file.url}` } width={400 } height={400 } alt={featuredImageAltTag } />
       </div>
       <div className='eventInfo'>
-        <h4>{eventDate}</h4>
+  
         <p>
           
           {ticketLink ? <Link href={ticketLink} target={"_blank"}>Click here for tickets</Link> : <span>{nonTicketed }</span>  }
