@@ -1,0 +1,31 @@
+.eventsPageCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap: 30px 10px;
+    text-align: center;
+}
+
+.eventsPageCard a{
+    text-decoration: none;
+    color: #E23E57;
+
+}
+
+.location{
+font-size: 12px;
+padding: 0 25px;
+color: grey;
+}
+
+.date{
+ font-size: 12px;
+ font-weight: 600;   
+}
+
+
+@media screen and (max-width: 700px ){
+    .eventsPageCard{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

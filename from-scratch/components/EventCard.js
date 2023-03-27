@@ -1,10 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/EventsPage.module.css'
 
 export default function EventCard({event}) {
-    const { thumbnail, thumbnailAltTag, title, slug } = event.fields
+  const { thumbnail, thumbnailAltTag, title, slug, location, eventDate } = event.fields
+ 
+  
     return (
       
       <div>
@@ -16,6 +18,8 @@ export default function EventCard({event}) {
             <h3 className={styles.eventTitle}>
               {title}
             </h3>
+            <p className={styles.date}>{eventDate }</p>
+            <p className={styles.location}>{ location}</p>
           </Link>
             
             

@@ -2,7 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import { createClient } from "contentful";
 import EventCard from '@/components/EventCard';
-
+import styles from '../../styles/EventsPage.module.css'
+import format from "date-fns/format";
 
  const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -17,13 +18,20 @@ export async function getStaticProps() {
   });
 
 
+    //  const dateField = res.items.map(item => item.fields.eventDate);
+    //  const dateObject = new Date(dateField);
+    //  const formattedDate = format(dateObject, "dd-MMM-yyyy");
+
+
   return {
-    props: {events: res.items,}
-   
+    props: {
+      events: res.items,
+     
+    },
   };
 }
 
-export default function eventsHome({ events }) {
+export default function eventsHome({ events}) {
 
   return (
     <div>
@@ -37,9 +45,9 @@ export default function eventsHome({ events }) {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <div className="eventCard">
+      <div className={styles.eventsPageCard}>
         {events.map((event) => (
-          <EventCard key={event.sys.id} event={event} />
+          <EventCard key={event.sys.id} event={event}/>
         ))}
       </div>
 

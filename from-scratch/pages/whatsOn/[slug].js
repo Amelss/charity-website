@@ -36,24 +36,25 @@ const client = createClient({
      "fields.slug": params.slug
    });
 
-   const dateField = items[0].fields.eventDate;
-   const dateObject = new Date(dateField);
-   const formattedDate = format(dateObject, "dd, MMM, yyyy");
+  //  const dateField = items[0].fields.eventDate;
+  //  const dateObject = new Date(dateField);
+  //  const formattedDate = format(dateObject, "dd, MMM, yyyy");
 
    return {
      props: {
        events: items[0],
-      formattedDate }
+
+     }
   
    };
    
  }
 
-export default function events({ events , formattedDate}) {
+export default function events({ events, formattedDate}) {
   console.log(events);
   if (!events) return <div>Loading...</div>;
 
-  const {title, featuredImage, featuredImageAltTag, ticketLink, eventText, nonTicketed} = events.fields
+  const {title, featuredImage, featuredImageAltTag, ticketLink, eventText, nonTicketed, location, eventDate} = events.fields
   return (
     <div>
       <Head>
@@ -75,7 +76,7 @@ export default function events({ events , formattedDate}) {
           alt={featuredImageAltTag}
         />
       </div>
-      <p>{formattedDate}</p>
+      <p>{eventDate}</p>
       <div className="eventInfo">
         <p>
           {ticketLink ? (
@@ -86,8 +87,10 @@ export default function events({ events , formattedDate}) {
             <span>{nonTicketed}</span>
           )}
         </p>
+        <p>{location }</p>
         <div>{documentToReactComponents(eventText)}</div>
       </div>
+      
     </div>
   );
 }

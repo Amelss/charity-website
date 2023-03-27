@@ -12,8 +12,7 @@ import { Pagination } from "swiper";
 import TestimonialCard from "@/components/TestimonialCard";
 import NewsletterSection from "@/components/NewsletterSection";
 import CharityLogos from "@/components/CharityLogos";
-import EventCard from "@/components/EventCard";
-import BlogCard from "@/components/BlogCard";
+import HPEventsCard from "@/components/HPEventsCard";
 
 
 const client = createClient({
@@ -212,7 +211,7 @@ export default function Home({
 
       <div className={styles.eventCard}>
         {events.map((event) => (
-          <EventCard key={event.sys.id} event={event} />
+          <HPEventsCard key={event.sys.id} event={event} />
         ))}
       </div>
 
