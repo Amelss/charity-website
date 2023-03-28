@@ -39,6 +39,7 @@ align-items: center;
 display: flex;
 align-items: center;
 
+
 }
 
 .date, .eventLocation{
@@ -46,6 +47,10 @@ margin-left: 15px;
 color: grey;
 font-size: 14px;
 margin-bottom: 10px;
+}
+
+.locationInfo{
+    margin-left: 15px;
 }
 
 .tickets{
@@ -61,9 +66,29 @@ margin-bottom: 10px;
 }
 
 
+.when{
 
+    font-size: 20px;
+}
 
+.nonTicketed{
+ 
+    color: #E23E57;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  
 
+}
+
+.slugEventInfo{
+
+    margin-left: 30px;
+}
+
+.eventFeaturedImg{
+    text-align: center;
+}
 
 @media screen and (max-width: 700px ){
 .eventsPageCard{
@@ -91,14 +116,26 @@ margin-top: 15px;
 width: 60%;
 }
 
+.slugEventInfo{
+    margin-left: 0;
+}
+
 .locationInfo, .dateInfo{
 display: flex;
 align-items: center;
+
 
 }
 .tickets{
  width: 80%;
 }
+
+.locationInfo{
+    margin-left: 0;
+
+}
+
+
 .eventBtnContainer{
   text-align: center;
  

@@ -67,31 +67,32 @@ export default function events({ events, formattedDate}) {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      
-      <div  className={styles.eventImg}>
-        <Image
-          src={`https:${featuredImage.fields.file.url}`}
-          width={400}
-          height={400}
-          alt={featuredImageAltTag}
-         
-        />
-      </div>
-      <div className={styles.eventTitle}>{title}</div>
-      <h2 className={styles.when}>When & Where</h2>
-      <div className={styles.eventInfo}>
-        <div className={styles.dateInfo }>
-          <Image src={'../assets/date-icon.svg' } width={ 20} height={20 } alt={ 'date icon'} />
-          <p className={styles.date}>{formattedDate}</p>
-        </div>
-        <div className={styles.locationInfo}>
-          <Image src={'../assets/location.svg' } width={ 20} height={20 } alt={ 'date icon'} />
-          <p className={styles.eventLocation}>{location}</p>
+      <div className={styles.slugEventInfo}>
+
+          <div className={styles.eventFeaturedImg}>
+            <Image
+              src={`https:${featuredImage.fields.file.url}`}
+              width={400}
+              height={400}
+              alt={featuredImageAltTag}
+            
+            />
+          </div>
+          <div className={styles.eventTitle}>{title}</div>
+          <h2 className={styles.when}>When & Where</h2>
+          <div className={styles.eventInfo}>
+            <div className={styles.dateInfo }>
+              <Image src={'../assets/date-icon.svg' } width={ 20} height={20 } alt={ 'date icon'} />
+              <p className={styles.date}>{formattedDate}</p>
+            </div>
+            <div className={styles.locationInfo}>
+              <Image src={'../assets/location.svg' } width={ 20} height={20 } alt={ 'date icon'} />
+              <p className={styles.eventLocation}>{location}</p>
+            </div>
+            
         </div>
         
-      </div>
-      
-         <div>
+          <div>
           {ticketLink ? (
           
 
@@ -109,6 +110,10 @@ export default function events({ events, formattedDate}) {
             <span className={styles.nonTicketed}>{nonTicketed}</span>
           )}
         </div>
+      </div>
+    
+      
+       
 
         <div className={styles.eventDesc}>{documentToReactComponents(eventText)}</div>
     
