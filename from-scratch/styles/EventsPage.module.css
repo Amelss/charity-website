@@ -109,4 +109,9 @@ align-items: center;
     margin-top: 30px;
 }
 
+.eventDesc{
+    text-align: center;
+    padding: 20px;
+}
+
 }

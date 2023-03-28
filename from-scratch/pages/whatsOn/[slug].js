@@ -110,7 +110,7 @@ export default function events({ events, formattedDate}) {
           )}
         </div>
 
-        <div>{documentToReactComponents(eventText)}</div>
+        <div className={styles.eventDesc}>{documentToReactComponents(eventText)}</div>
     
       
     </div>
