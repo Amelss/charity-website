@@ -67,9 +67,8 @@ export default function events({ events, formattedDate}) {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <div className={styles.slugEventInfo}>
-
-          <div className={styles.eventFeaturedImg}>
+      
+       <div className={styles.eventFeaturedImg}>
             <Image
               src={`https:${featuredImage.fields.file.url}`}
               width={400}
@@ -77,7 +76,11 @@ export default function events({ events, formattedDate}) {
               alt={featuredImageAltTag}
             
             />
-          </div>
+      </div>
+      
+      <div className={styles.slugEventInfo}>
+
+         
           <div className={styles.eventTitle}>{title}</div>
           <h2 className={styles.when}>When & Where</h2>
           <div className={styles.eventInfo}>
