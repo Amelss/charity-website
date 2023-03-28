@@ -5,7 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Link from 'next/link';
 import { format } from "date-fns";
 import Head from "next/head";
-
+import styles from '../../styles/EventsPage.module.css'
 
 
 const client = createClient({
@@ -36,13 +36,14 @@ const client = createClient({
      "fields.slug": params.slug
    });
 
-  //  const dateField = items[0].fields.eventDate;
-  //  const dateObject = new Date(dateField);
-  //  const formattedDate = format(dateObject, "dd, MMM, yyyy");
+   const dateField = items[0].fields.eventDate;
+   const dateObject = new Date(dateField);
+   const formattedDate = format(dateObject, "dd, MMM, yyyy");
 
    return {
      props: {
        events: items[0],
+       formattedDate
 
      }
   
@@ -51,7 +52,6 @@ const client = createClient({
  }
 
 export default function events({ events, formattedDate}) {
-  console.log(events);
   if (!events) return <div>Loading...</div>;
 
   const {title, featuredImage, featuredImageAltTag, ticketLink, eventText, nonTicketed, location, eventDate} = events.fields
@@ -67,29 +67,51 @@ export default function events({ events, formattedDate}) {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <div className="eventTitle">{title}</div>
-      <div className="eventImg">
+      
+      <div  className={styles.eventImg}>
         <Image
           src={`https:${featuredImage.fields.file.url}`}
           width={400}
           height={400}
           alt={featuredImageAltTag}
+         
         />
       </div>
-      <p>{eventDate}</p>
-      <div className="eventInfo">
-        <p>
+      <div className={styles.eventTitle}>{title}</div>
+      
+      <div className={styles.eventInfo}>
+        <div className={styles.dateInfo }>
+          <Image src={'../assets/date-icon.svg' } width={ 20} height={20 } alt={ 'date icon'} />
+          <p className={styles.date}>{formattedDate}</p>
+        </div>
+        <div className={styles.locationInfo}>
+          <Image src={'../assets/location.svg' } width={ 20} height={20 } alt={ 'date icon'} />
+          <p className={styles.eventLocation}>{location}</p>
+        </div>
+        
+      </div>
+      
+         <div>
           {ticketLink ? (
-            <Link href={ticketLink} target={"_blank"}>
-              Click here for tickets
-            </Link>
+          
+
+            <div className={styles.eventBtnContainer}>
+              <Link href={ticketLink} target={"_blank"}>
+                  <button type='button' className={styles.tickets}>
+                  Get tickets
+                  </button>
+               </Link>
+            </div>
+           
+             
+           
           ) : (
             <span>{nonTicketed}</span>
           )}
-        </p>
-        <p>{location }</p>
+        </div>
+
         <div>{documentToReactComponents(eventText)}</div>
-      </div>
+    
       
     </div>
   );

@@ -22,10 +22,82 @@ color: grey;
  font-weight: 600;   
 }
 
+.eventTitle{
+font-weight: 600;
+color: #E23E57;
+font-size: 25px;
+
+}
+.eventInfo{
+display: flex;
+align-items: center;
+
+
+}
+
+.locationInfo, .dateInfo{
+display: flex;
+align-items: center;
+
+}
+
+.date, .eventLocation{
+margin-left: 15px;
+}
+
+.tickets{
+    background-color: #E23E57;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+
+
 
 @media screen and (max-width: 700px ){
-    .eventsPageCard{
+.eventsPageCard{
         display: grid;
         grid-template-columns: 1fr;
     }
+
+.eventImg{
+    text-align: center;
+}
+
+.eventTitle{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.eventInfo{
+display: block;
+margin-left: 20px;
+margin-top: 15px;
+
+}
+
+.eventLocation{
+width: 60%;
+}
+
+.locationInfo, .dateInfo{
+display: flex;
+align-items: center;
+
+}
+.tickets{
+ width: 80%;
+}
+.eventBtnContainer{
+  text-align: center;
+ 
+}
+
 }
