@@ -106,7 +106,7 @@ export default function events({ events, formattedDate}) {
              
            
           ) : (
-            <span>{nonTicketed}</span>
+            <span className={styles.nonTicketed}>{nonTicketed}</span>
           )}
         </div>
 
