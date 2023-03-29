@@ -12,7 +12,7 @@ export default function EventCard({event}) {
       <div>
           <div className={styles.events}>
               <Link href={`/whatsOn/${slug}`}>
-            <Image src={`https:${thumbnail.fields.file.url}`} width={400} height={400} alt={thumbnailAltTag} className={styles.eventPicture} />
+            <Image src={`https:${thumbnail.fields.file.url}`} width={350} height={350} alt={thumbnailAltTag} className={styles.eventPicture} />
           </Link>
           <Link href={`/whatsOn/${slug}`}>
             <h3 className={styles.eventTitle}>

@@ -71,8 +71,8 @@ export default function events({ events, formattedDate}) {
        <div className={styles.eventFeaturedImg}>
             <Image
               src={`https:${featuredImage.fields.file.url}`}
-              width={400}
-              height={400}
+              width={300}
+              height={300}
               alt={featuredImageAltTag}
             
             />
