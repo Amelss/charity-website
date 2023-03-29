@@ -97,7 +97,7 @@ margin-bottom: 10px;
     padding: 30px;
 }
 
-@media screen and (max-width: 700px ){
+@media screen and (max-width: 1000px ){
 .eventsPageCard{
         display: grid;
         grid-template-columns: 1fr;
@@ -168,4 +168,11 @@ align-items: center;
 
 }
 
+}
+
+@media screen and (min-width: 1001px ) and (max-width: 1100px){
+    .eventsPageCard{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
