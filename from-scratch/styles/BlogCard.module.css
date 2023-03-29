@@ -3,6 +3,9 @@
     display: none;
 }
 
+.thumbnailImg{
+    border-top: #E23E57 8px solid;
+}
 .blogs{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr  ;
@@ -46,6 +49,7 @@ display: flex;
     .mobileThumbnailImg{
         display: block;
         text-align: center;
+        border-top: #E23E57 8px solid;
     }
     .thumbnailImg{
         display: none;
