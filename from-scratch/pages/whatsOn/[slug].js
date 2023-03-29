@@ -85,7 +85,7 @@ export default function events({ events, formattedDate}) {
           <h2 className={styles.when}>When & Where</h2>
           <div className={styles.eventInfo}>
             <div className={styles.dateInfo }>
-              <Image src={'../assets/date-icon.svg' } width={ 20} height={20 } alt={ 'date icon'} />
+              <Image src={'../assets/date-icon.svg' } width={20} height={20} alt={ 'date icon'} />
               <p className={styles.date}>{formattedDate}</p>
             </div>
             <div className={styles.locationInfo}>
