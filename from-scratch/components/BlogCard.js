@@ -15,8 +15,8 @@ export default function BlogCard({ blog }) {
         <div className={styles.thumbnailImg}>
           <Image
             src={`https:${thumbnail.fields.file.url}`}
-            width={600}
-            height={700}
+            width={400}
+            height={600}
             alt={thumbnailAltTag}
           />
         </div>

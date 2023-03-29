@@ -270,11 +270,6 @@ export default function Home({
           </div>
         ))}
 
-        {/* <div className={styles.blogs}>
-          {blog.map((blog) => (
-            <BlogCard key={blog.sys.id} blog={blog} />
-          ))}
-        </div> */}
       </div>
 
       <div className={styles.swiperSlide}>
