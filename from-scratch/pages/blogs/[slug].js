@@ -32,7 +32,7 @@ export async function getStaticProps({params}) {
     content_type: 'blog',
     'fields.slug': params.slug
   })
-console.log(params.slug);
+
   return {
     props: { blog: items[0] }
    
@@ -40,6 +40,7 @@ console.log(params.slug);
 }
 
 export default function blogPosts({ blog }) {
+  console.log(blog);
   if (!blog) return <div>Loading...</div>;
   const {title, featuredImage, featuredImageAltTag, author, blogPublishedDate, blogText, readTime} = blog.fields
   return (
@@ -68,7 +69,14 @@ export default function blogPosts({ blog }) {
         <h5>{author}</h5>
         <h5>{blogPublishedDate}</h5>
       </div>
-      <div className="readTime">{readTime}</div>
+      <div>
+        {readTime <= 1 ? (
+          <p className="readTime">Read Time: {readTime} minute</p>
+        ) : (
+          <p className="readTime">Read Time: {readTime} minutes </p>
+        )}
+      </div>
+
       <div className="blogText">{documentToReactComponents(blogText)}</div>
     </div>
   );
