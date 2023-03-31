@@ -1,0 +1,53 @@
+.heading{
+text-align: center;
+font-size: 50px;
+letter-spacing: 1px;
+color: #E23E57;
+}
+
+.subheading{
+text-align: center;
+}
+
+.dskpFeaturedImage{
+text-align: center;
+
+}
+
+.mobileFeaturedImage{
+display: none;
+}
+
+
+.homeBtn{
+    border: none;
+    border-radius: 5px;
+    background-color: #E23E57;
+    padding: 10px 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btnContainer{
+    text-align: center;
+    margin-top: 30px;
+}
+@media screen and (max-width: 1000px ) {
+.mobileFeaturedImage{
+display: block;
+margin: auto;
+}
+
+.dskpFeaturedImage{
+display: none;
+}
+.homeBtn{
+    font-size: 15px;
+   
+}
+
+}
+
