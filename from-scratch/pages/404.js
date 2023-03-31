@@ -23,7 +23,7 @@ export default function NotFound({errorPage}) {
   return (
     <div>
       <Head>
-        <title>From Scratch | Error 404</title>
+        <title>From Scratch | 404 Error</title>
         <meta
           name="description"
           content="A charity for children using art to express themselves"
