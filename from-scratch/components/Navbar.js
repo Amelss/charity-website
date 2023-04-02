@@ -6,11 +6,15 @@ import { stack as Menu } from "react-burger-menu";
 
 export default function Navbar() {
 
-// const [navBarOpen, setNavBarOpen] = useState(false);
+ const [isOpen, setOpen] = useState(false);
 
-// const handleOpen = () => {
-//   setNavBarOpen(!navBarOpen);
-// };
+ const handleIsOpen = () => {
+   setOpen(!isOpen);
+ };
+
+ const closeSideBar = () => {
+   setOpen(false);
+ };
 
 
   return (
@@ -56,19 +60,23 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <Menu right>
+        <Menu
+          right
+          isOpen={isOpen}
+          onOpen={handleIsOpen}
+          onClose={handleIsOpen}
+        >
           <div className="mobile-nav-links">
-            <Link href={"/"}>Home</Link>
-            <Link href={"/about"}>About Us</Link>
-            <Link href={"/sessions"}>Sessions</Link>
-            <Link href={"/whatsOn"}>Events</Link>
+            <Link href={"/"} onClick={closeSideBar}>Home</Link>
+            <Link href={"/about"} onClick={closeSideBar}>About Us</Link>
+            <Link href={"/sessions"} onClick={closeSideBar}>Sessions</Link>
+            <Link href={"/whatsOn"} onClick={closeSideBar}>Events</Link>
+           
             <Link
               href={"https://uk.virginmoney.com/service/virgin-money-giving/"}
               target={"_blank"}
-            >
-              {" "}
-              Donate
-            </Link>
+              onClick={closeSideBar}>
+              Donate</Link>
           </div>
         </Menu>
       </nav>
