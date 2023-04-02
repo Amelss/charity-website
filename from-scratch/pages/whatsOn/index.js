@@ -18,11 +18,6 @@ export async function getStaticProps() {
   });
 
 
-    //  const dateField = res.items.map(item => item.fields.eventDate);
-    //  const dateObject = new Date(dateField);
-    //  const formattedDate = format(dateObject, "dd-MMM-yyyy");
-
-
   return {
     props: {
       events: res.items,
